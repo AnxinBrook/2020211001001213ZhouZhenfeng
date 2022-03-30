@@ -5,53 +5,83 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-@WebServlet("/register")
+@WebServlet(urlPatterns = {"/register"},loadOnStartup = 1)
 public class RegisterServlet extends HttpServlet {
     Connection con= null;
     @Override
     public void  init() throws ServletException{
-        ServletContext context=getServletContext();
+        super.init();
+        /*ServletContext context=getServletContext();
         String driver=context.getInitParameter("driver");
         String url=context.getInitParameter("url");
         String username=context.getInitParameter("username");
         String password=context.getInitParameter("password");
         try {
             Class.forName(driver);
-            Connection con= DriverManager.getConnection(url,username,password);
-            System.out.println("Connection --> in JDBCDemoServlet"+con);
+            con = DriverManager.getConnection(url,username,password);
+            System.out.println("init --> "+con);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
+       con= (Connection) getServletContext().getAttribute("con");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+doPost(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username=new String(request.getParameter("username"));
-        String password=new String(request.getParameter("password"));
-        String  email=new String(request.getParameter("email"));
-        String  gender=new String(request.getParameter("gender"));
-        String birthDate=new String(request.getParameter("birthDate"));
-        System.out.println("1,username:"+username+"\t password:" +password);
-        Connection con = null;
-        Statement sql;
-        String dbname="userdb";
-        String url="jdbc:sqlserver://localhost:1433;DatabaseName=userdb";
-        String userName="sa";
-        String userPwd="123456";
-        String driverName="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        try{
+        PrintWriter writer = response.getWriter();
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        String gender = request.getParameter("gender");
+        String birthDate = request.getParameter("birthDate");
+        try {
+            Statement st = con.createStatement();
+            String sql = "insert into usertable(username,password,email,gender,birthDate)" +
+                    "values(' "+username+" ',' "+password+" ',' "+email+" ',' "+gender+" ','" + birthDate+"')";
+
+            System.out.println("sql" + sql);
+            int n = st.executeUpdate(sql);
+            System.out.println("n-->" + n);
+            //sql = "insert username,password,email,gender,birthDate from usertable";
+            //ResultSet rs = st.executeQuery(sql);
+            PrintWriter out = response.getWriter();
+            /*out.println("<html><title></title><body><table border=1><tr>");
+            out.println("<td>username</td><td>password</td><td>email</td><td>gender</td><td>birthDate</td>");
+            while (rs.next()) {
+                out.println("<tr>");
+                out.println("<td>" + rs.getString("username") + "</td>");
+                out.println("<td>" + rs.getString("password") + "</td>");
+                out.println("<td>" + rs.getString("email") + "</td>");
+                out.println("<td>" + rs.getString("gender") + "</td>");
+                out.println("<td>" + rs.getString("birthDate") + "</td>");
+                out.println("</tr>");
+            }
+            out.println("</table></body></html>");*/
+            //request.setAttribute("rsname",rs);
+            //request.getRequestDispatcher("userList.jsp").forward(request,response);
+            //System.out.println("I am in RegisterServlet-->doPost()-->after forward");
+            response.sendRedirect("login.jsp");
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        /*writer.println("<br>username :"+username);
+        writer.println("<br>password :"+password);
+        writer.println("<br>email :"+email);
+        writer.println("<br>gender :"+gender);
+        writer.println("<br>birthDate :"+birthDate);
+        writer.close();*/
+
+        /*try{
             Class.forName(driverName);
             con=DriverManager.getConnection(url,userName,userPwd);
             sql=con.createStatement();
@@ -74,5 +104,6 @@ public class RegisterServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }*/
     }
 }
