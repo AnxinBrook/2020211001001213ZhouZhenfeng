@@ -37,7 +37,7 @@ if (allCookies!=null){
     <input type="checkbox" name="RememberMe" value="1" <%=rememberMeVale.equals("1") ?"checked":""%>checked/>RememberMe<br/>
 
 
-    <input type="submit" value="Sumber"/>
+    <input type="submit" value="Submit"/>
 </form>
 <%@include file="footer.jsp"%>
 
