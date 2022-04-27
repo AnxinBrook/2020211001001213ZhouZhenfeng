@@ -13,6 +13,6 @@
     email:<input type="text" name="email"></br>
     gender:<input type="radio" name="gender" value="male">Male <input type="radio" name="gender" value="female">Female</br>
    birthDate:<input type="text name=" name="birthDate"></br>
-    <input type="submit" name="submit" password="submit" email="submit" gender="submit" birthdate="submit" value="Register"/>
+    <input type="submit"  value="Register"/>
 </form>
 <%@include file="footer.jsp"%>

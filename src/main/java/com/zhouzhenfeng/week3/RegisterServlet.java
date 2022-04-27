@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-doPost(request,response);
+request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
     }
 
     @Override
@@ -53,7 +53,7 @@ doPost(request,response);
             System.out.println("n-->" + n);
             //sql = "insert username,password,email,gender,birthDate from usertable";
             //ResultSet rs = st.executeQuery(sql);
-            PrintWriter out = response.getWriter();
+            //PrintWriter out = response.getWriter();
             /*out.println("<html><title></title><body><table border=1><tr>");
             out.println("<td>username</td><td>password</td><td>email</td><td>gender</td><td>birthDate</td>");
             while (rs.next()) {
@@ -69,7 +69,8 @@ doPost(request,response);
             //request.setAttribute("rsname",rs);
             //request.getRequestDispatcher("userList.jsp").forward(request,response);
             //System.out.println("I am in RegisterServlet-->doPost()-->after forward");
-            response.sendRedirect("login.jsp");
+
+            response.sendRedirect("login");
         } catch (SQLException e){
             e.printStackTrace();
         }
