@@ -1,6 +1,6 @@
 package com.zhouzhenfeng.dao;
 
-import com.zhouzhenfeng.model.User;
+import com.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

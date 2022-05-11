@@ -1,4 +1,4 @@
-<%@ page import="com.zhouzhenfeng.model.User" %><%--
+<%@ page import="com.model.User" %><%--
   Created by IntelliJ IDEA.
   User: wsdl
   Date: 2022/4/5

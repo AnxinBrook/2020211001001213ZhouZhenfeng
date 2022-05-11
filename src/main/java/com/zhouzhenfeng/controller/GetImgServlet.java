@@ -1,18 +1,17 @@
 package com.zhouzhenfeng.controller;
 
-import com.model.Product;
 import com.zhouzhenfeng.dao.ProductDao;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
-@WebServlet(name = "ProductListServlet", value = "/ProductListServlet")
-public class ProductListServlet extends HttpServlet {
+@WebServlet(name = "GetImgServlet", value = "/getImg")
+public class GetImgServlet extends HttpServlet {
     Connection con=null;
     @Override
     public void init() throws ServletException{
@@ -21,14 +20,23 @@ public class ProductListServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        int id=0;
+        if (request.getParameter("id")!=null)
+            id=Integer.parseInt(request.getParameter("id"));
         ProductDao productDao=new ProductDao();
-        try {
-            List<Product> productList=productDao.findAll(con);
+        byte[] imgByte=new byte[0];
+       try {
+           imgByte=productDao.getpictureById(id,con);
+           if (imgByte!=null){
+               response.setContentType("image/gif");
+               OutputStream out=response.getOutputStream();
+               out.write(imgByte);
+               out.flush();
+           }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        String path="WEB-INF/views/admin/productList.jsp";
-request.getRequestDispatcher(path).forward(request,response);
     }
 
     @Override

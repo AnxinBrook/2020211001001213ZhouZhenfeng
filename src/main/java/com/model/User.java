@@ -1,4 +1,4 @@
-package com.zhouzhenfeng.model;
+package com.model;
 
 import java.util.Date;
 

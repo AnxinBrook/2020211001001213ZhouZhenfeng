@@ -1,6 +1,5 @@
-package com.zhouzhenfeng.model;
+package com.model;
 
-import jdk.internal.util.xml.impl.Input;
 
 import java.io.InputStream;
 
@@ -83,7 +82,7 @@ public class Product {
                 ", productDescription='" + productDescription + '\'' +
                 ", picture=" + picture +
                 ", price=" + price +
-                ", categoryId=" + categoryId +
+        ", categoryId=" + categoryId +
                 '}';
     }
 }
