@@ -1,4 +1,4 @@
-package com.model;
+package com.zhouzhenfeng.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

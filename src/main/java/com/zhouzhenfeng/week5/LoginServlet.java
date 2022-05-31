@@ -1,7 +1,7 @@
 package com.zhouzhenfeng.week5;
 
 import com.zhouzhenfeng.dao.UserDao;
-import com.model.User;
+import com.zhouzhenfeng.model.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;

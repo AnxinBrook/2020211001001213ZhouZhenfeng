@@ -2,8 +2,8 @@ package com.zhouzhenfeng.controller;
 
 
 
-import com.model.Item;
-import com.model.Product;
+import com.zhouzhenfeng.model.Item;
+import com.zhouzhenfeng.model.Product;
 import com.zhouzhenfeng.dao.ProductDao;
 
 import javax.servlet.ServletException;

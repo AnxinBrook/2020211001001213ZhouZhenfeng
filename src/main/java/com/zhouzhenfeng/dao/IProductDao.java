@@ -1,6 +1,6 @@
 package com.zhouzhenfeng.dao;
 
-import com.model.Product;
+import com.zhouzhenfeng.model.Product;
 
 import java.sql.Connection;
 import java.sql.SQLException;

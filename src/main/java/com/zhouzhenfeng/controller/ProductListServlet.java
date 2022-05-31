@@ -1,6 +1,6 @@
 package com.zhouzhenfeng.controller;
 
-import com.model.Product;
+import com.zhouzhenfeng.model.Product;
 import com.zhouzhenfeng.dao.ProductDao;
 
 import javax.servlet.*;

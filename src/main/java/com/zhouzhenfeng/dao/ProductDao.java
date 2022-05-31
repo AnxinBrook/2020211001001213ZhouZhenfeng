@@ -2,7 +2,7 @@ package com.zhouzhenfeng.dao;
 
 
 
-import com.model.Product;
+import com.zhouzhenfeng.model.Product;
 
 import java.sql.*;
 import java.util.List;

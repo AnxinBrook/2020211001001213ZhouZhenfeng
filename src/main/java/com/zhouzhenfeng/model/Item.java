@@ -1,4 +1,4 @@
-package com.model;
+package com.zhouzhenfeng.model;
 
 public class Item {
     private Product product;

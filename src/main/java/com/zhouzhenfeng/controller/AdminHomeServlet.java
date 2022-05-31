@@ -1,6 +1,6 @@
 package com.zhouzhenfeng.controller;
 
-import com.model.User;
+import com.zhouzhenfeng.model.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
