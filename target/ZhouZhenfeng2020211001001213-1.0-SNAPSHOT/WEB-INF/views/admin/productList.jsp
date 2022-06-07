@@ -1,5 +1,5 @@
-<%@ page import="com.model.Product" %>
-<%@ page import="com.model.Category" %>
+<%@ page import="com.zhouzhenfeng.model.Product" %>
+<%@ page import="com.zhouzhenfeng.model.Category" %>
 <%@include file="../header.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
