@@ -56,6 +56,14 @@
         </init-param>
     </servlet>
     <servlet>
+        <servlet-name>week2</servlet-name>
+        <servlet-class>com.zhouzhenfeng.week2.HelloWorldServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>week2</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.zhouzhenfeng.week5.LoginServlet</servlet-class>
     </servlet>
