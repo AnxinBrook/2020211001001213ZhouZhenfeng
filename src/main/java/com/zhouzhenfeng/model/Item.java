@@ -8,6 +8,10 @@ public class Item {
         this.quantity = quantity;
     }
 
+    public Item() {
+
+    }
+
     public void Item(){
 
     }
