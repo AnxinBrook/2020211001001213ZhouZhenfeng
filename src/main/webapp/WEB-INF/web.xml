@@ -82,18 +82,18 @@
     <!--<servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
-    </servlet-mapping>-->
-    <!--<servlet-mapping>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>JDBCDemoServlet</servlet-name>
         <url-pattern>/jdbc</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ConfigDemoServlet</servlet-name>
         <url-pattern>/Config</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>
-    </welcome-file-list>
+    </welcome-file-list>!-->
     <filter>
         <filter-name>HelloServlet</filter-name>
         <filter-class>com.zhouzhenfeng.filter.HelloFilter</filter-class>
