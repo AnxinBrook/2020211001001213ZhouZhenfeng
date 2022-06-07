@@ -1,25 +1,12 @@
 
 package com.zhouzhenfeng.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
 import com.zhouzhenfeng.model.Item;
 import com.zhouzhenfeng.model.Order;
-import org.apache.log4j.Logger;
+import com.zhouzhenfeng.model.Product;
 
-import com.dabing.model.Item;
-import com.dabing.model.Order;
-
-import com.dabing.model.Product;
+import java.sql.*;
+import java.util.*;
 
 /**
  * A data access object (DAO) providing persistence and search support for Order

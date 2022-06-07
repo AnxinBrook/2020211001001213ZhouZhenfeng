@@ -81,7 +81,7 @@ public class OrderServlet extends HttpServlet {
         o.setOrderTotal(orderTotal);
         HttpSession session = request.getSession(false);
 //        有点不太懂
-        if (session != null && session.getAttribute("user") != null) {
+        if (session != null && session.getAttribute("cart") != null) {
             ArrayList<Item> cartItems = (ArrayList<Item>) session.getAttribute("cart");
             o.setOrderDetails(new HashSet<Item>(cartItems));
         }
@@ -93,10 +93,13 @@ public class OrderServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(n);
 //        转发
         if (n > 0) {
+            System.out.println("我被执行了");
             String path = "/WEB-INF/views/orderSuccess.jsp";
             request.getRequestDispatcher(path).forward(request, response);
+            System.out.println("我被转发了");
         }
     }
 }

@@ -35,7 +35,7 @@ public class AccountDetailsServlet extends HttpServlet {
                 OrderDao orderDao = new OrderDao();
                 List<Order> orderList = orderDao.findByUserId(con, id);
                 request.setAttribute("orderList",orderList);
-                request.getRequestDispatcher("WEB-INF/views/admin/addProduct.jsp").forward(request,response);
+                request.getRequestDispatcher("WEB-INF/views/accountDetails.jsp").forward(request,response);
             } catch (SQLException e) {
                 e.printStackTrace();
             }

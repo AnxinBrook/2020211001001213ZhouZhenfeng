@@ -1,6 +1,6 @@
 		<%@include file="header.jsp" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="com.dabing.model.User" %>
+<%@ page import="com.zhouzhenfeng.model.User" %>
 	<section id="z`z`">
 		<div class="container">
 			<div class="step-one">

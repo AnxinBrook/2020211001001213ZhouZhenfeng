@@ -8,7 +8,7 @@ public class User {
     private String password;
     private String email;
     private String gender;
-    private     java.util.Date birthdate;
+    private     Date birthdate;
 
     public User() {
 
@@ -84,5 +84,10 @@ public class User {
                 ", gender='" + gender + '\'' +
                 ", birthdate=" + birthdate +
                 '}';
+    }
+
+    public Object getBirthDate() {
+        Object birthDate = null;
+        return birthDate;
     }
 }
